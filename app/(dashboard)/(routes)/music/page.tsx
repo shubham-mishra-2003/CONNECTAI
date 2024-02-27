@@ -14,6 +14,7 @@ import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
 import { Empty } from "@/components/empty";
 import { Loader } from "@/components/loader";
+import toast from "react-hot-toast";
 
 const MusicPage = () => {
   const router = useRouter();
@@ -39,6 +40,7 @@ const MusicPage = () => {
       form.reset();
     } catch (error: any) {
       console.log("[AXIOS_ERROR]", error);
+      toast.error("Out of API credits");
     } finally {
       router.refresh();
     }

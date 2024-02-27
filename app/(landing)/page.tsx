@@ -9,5 +9,5 @@ const landingPage = () => {
     </div>
   );
 };
-
+``
 export default landingPage;

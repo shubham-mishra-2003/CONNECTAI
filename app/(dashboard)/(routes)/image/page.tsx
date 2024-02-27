@@ -23,6 +23,7 @@ import {
 } from "@/components/ui/select";
 import { Card, CardFooter } from "@/components/ui/card";
 import Image from "next/image";
+import toast from "react-hot-toast";
 
 const ImagePage = () => {
   const router = useRouter();
@@ -52,6 +53,7 @@ const ImagePage = () => {
       form.reset();
     } catch (error: any) {
       console.log("[AXIOS_ERROR]", error);
+      toast.error("Out of API credits");
     } finally {
       router.refresh();
     }
